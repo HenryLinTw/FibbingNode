@@ -28,7 +28,7 @@ class NetworkNamespace(object):
         self.create_ns()
 
     def create_ns(self):
-        if os.path.exists(NSDIR) and ' %s ' % self.name in os.listdir(NSDIR):
+        if os.path.exists(NSDIR) and '%s' % self.name in os.listdir(NSDIR):
             self.delete()
         err = _netns('add', self.name)
         if err != 0:
